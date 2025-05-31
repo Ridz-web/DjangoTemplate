@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}My Website{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <header>
+      <h1 class="base-header">My Website Header</h1>
+      <nav>
+        <a href="{% url 'Home' %}">Home</a> |
+        <a href="{% url 'blog' %}">Blog</a>
+      </nav>
+    </header>
+
+    <main>
+      {% block content %}
+      <!-- Konten halaman akan diisi oleh template turunan -->
+      {% endblock %}
+    </main>
+
+    <footer>
+      <p>Hak Cipta &copy; 2025</p>
+    </footer>
+  </body>
+</html>
